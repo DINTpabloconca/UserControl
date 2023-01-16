@@ -81,7 +81,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CambiarTextoValueChangedMessage.cs" />
     <Compile Include="ServicioNavegacion.cs" />
+    <Compile Include="TextoInicialRequestMessage.cs" />
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>

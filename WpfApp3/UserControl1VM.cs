@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp3
 {
-    class UserControl1VM : ObservableObject
+    class UserControl1VM : ObservableRecipient
     {
         private string mensaje;
 
@@ -18,7 +19,11 @@ namespace WpfApp3
         }
         public UserControl1VM()
         {
-            Mensaje = "Soy el UserControl 1";
+            Mensaje = WeakReferenceMessenger.Default.Send<TextoInicialRequestMessage>();
+            WeakReferenceMessenger.Default.Register<CambiarTextoValueChangedMessage>(this, (r, m) =>
+            {
+                Mensaje = m.Value;
+            });
         }
     }
 }

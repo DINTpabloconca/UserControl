@@ -13,5 +13,13 @@ namespace WpfApp3
             VentanaHija nueva = new VentanaHija();
             return nueva.ShowDialog();
         }
+        public UserControl1 ObtenerUC1()
+        {
+            return new UserControl1();
+        }
+        public UserControl2 ObtenerUC2()
+        {
+            return new UserControl2();
+        }
     }
 }
